@@ -7,6 +7,6 @@ uname -a
 # sudo modprobe rtl8192cu
 
 # set monitor mode
-sudo ifconfig wlx00026fbdf996 down
-sudo iwconfig wlx00026fbdf996 mode monitor
-sudo ifconfig wlx00026fbdf996 up
+sudo ifconfig wlan1 down
+sudo iwconfig wlan1 mode monitor
+sudo ifconfig wlan1 up
