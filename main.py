@@ -11,8 +11,12 @@ from hmpa import email
 
 def brief_report(devices):
     all_devices = devices['found_devices']
-    title = "{time} 一共发现了 {sum} 台设备".format(time=devices['time'],
+    # title = "{time} 一共发现了 {sum} 台设备".format(time=devices['time'],
+    #                                        sum=len(all_devices))
+    title = "Time: {time}, Total:{sum} devices".format(time=devices['time'],
                                             sum=len(all_devices))
+
+
     content = 'Known Devices:    \n'
 
     for dev in all_devices:
@@ -32,7 +36,8 @@ def job():
     adapter = config.adapter
     devices = tshark.scan(adapter, 60)
     title, content = brief_report(devices)
-    print(content)
+    print(title)
+    # print(content)
 
     if config.use_email:
         try:
